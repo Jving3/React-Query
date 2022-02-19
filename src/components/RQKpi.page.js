@@ -11,7 +11,7 @@ const RQKpiPage = () => {
        'kpi', 
        fetchKpi,
         {
-            staleTime: 40000,
+            refetchOnMount: true, //true, false (actualiza solo la primera vez), 'always'
         }
        )
 
