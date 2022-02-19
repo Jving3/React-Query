@@ -11,8 +11,8 @@ const RQKpiPage = () => {
        'kpi', 
        fetchKpi,
         {
-            refetchOnMount: true, //true, false (actualiza solo la primera vez), 'always'
-            refetchOnWindowFocus: 'always' // configuracion del comportamiento del enfoque de ventana
+            refetchInterval: 3000, //Selecciona el intervalo de tiempo de consulta automatica
+            refetchIntervalInBackground: true, //indica si continua haciendo consultas en segundo plano
         }
        )
 
