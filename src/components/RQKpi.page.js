@@ -7,18 +7,17 @@ const fetchKpi = () => {
 
 const RQKpiPage = () => {
 
-   const { isLoading, data, isError, error, isFetching } = useQuery(
+   const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
        'kpi', 
        fetchKpi,
         {
-            refetchInterval: 3000, //Selecciona el intervalo de tiempo de consulta automatica
-            refetchIntervalInBackground: true, //indica si continua haciendo consultas en segundo plano
+           enabled: false, 
         }
        )
 
    console.log({isLoading, isFetching})
 
-    if (isLoading) {
+    if (isLoading || isFetching) {
         return <h2> Cargando...</h2>
     }
 
@@ -29,6 +28,7 @@ const RQKpiPage = () => {
     return ( 
         <>
             <div><h1>RQ KPI PAGE</h1></div>
+            <button onClick={refetch}>Actualizar</button>
             {
                 data?.data.map(item => {
                     return <div key={item.id}>{item.firstname}</div>
