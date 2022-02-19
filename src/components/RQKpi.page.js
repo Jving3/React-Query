@@ -7,7 +7,15 @@ const fetchKpi = () => {
 
 const RQKpiPage = () => {
 
-   const { isLoading, data, isError, error } = useQuery('kpi', fetchKpi)
+   const { isLoading, data, isError, error, isFetching } = useQuery(
+       'kpi', 
+       fetchKpi,
+       {
+           cacheTime: 5000, //Indica el tiempo que se almacena la informacion en la memoria cache
+       }
+       )
+
+   console.log({isLoading, isFetching})
 
     if (isLoading) {
         return <h2> Cargando...</h2>
