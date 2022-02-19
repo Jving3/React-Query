@@ -5,13 +5,21 @@ const fetchKpi = () => {
     return axios.get('http://localhost:4040/getUsers')
 }
 
+const onSuccess = (data) => {
+    console.log('Resultados obtenidos satisfactoriamente', data)
+}
+const onError = (error) => {
+    console.log('Resultados no obtenidos', error)
+}
+
 const RQKpiPage = () => {
 
    const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
        'kpi', 
        fetchKpi,
         {
-           enabled: false, 
+            onSuccess: onSuccess, 
+            onError: onError
         }
        )
 
@@ -28,7 +36,7 @@ const RQKpiPage = () => {
     return ( 
         <>
             <div><h1>RQ KPI PAGE</h1></div>
-            <button onClick={refetch}>Actualizar</button>
+            {/* <button onClick={refetch}>Actualizar</button> */}
             {
                 data?.data.map(item => {
                     return <div key={item.id}>{item.firstname}</div>
