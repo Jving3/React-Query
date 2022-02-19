@@ -1,31 +1,16 @@
-import { useQuery } from "react-query";
-import axios from "axios";
+import useKpiData from "./hooks/useKpiData"
 
-const fetchKpi = () => {
-    return axios.get('http://localhost:4040/getUsers')
-}
-
-const onSuccess = (data) => {
-    console.log('Resultados obtenidos satisfactoriamente', data)
-}
-const onError = (error) => {
-    console.log('Resultados no obtenidos', error)
-}
 
 const RQKpiPage = () => {
-
-   const { isLoading, data, isError, error, isFetching, refetch } = useQuery(
-       'kpi', 
-       fetchKpi,
-        {
-            onSuccess: onSuccess, 
-            onError: onError,
-            select: (data) => {
-                const nombres = data.data.filter(item => item.lastname === 'Apostol')
-                return nombres
-            }
-        }
-       )
+    
+    const onSuccess = (data) => {
+        console.log('Resultados obtenidos satisfactoriamente', data)
+    }
+    const onError = (error) => {
+        console.log('Resultados no obtenidos', error)
+    }
+    
+   const { isLoading, data, isError, error, isFetching, refetch } = useKpiData(onSuccess, onError)
 
    console.log({isLoading, isFetching})
 
