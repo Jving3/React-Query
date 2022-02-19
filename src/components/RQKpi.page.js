@@ -10,9 +10,9 @@ const RQKpiPage = () => {
    const { isLoading, data, isError, error, isFetching } = useQuery(
        'kpi', 
        fetchKpi,
-       {
-           cacheTime: 5000, //Indica el tiempo que se almacena la informacion en la memoria cache
-       }
+        {
+            staleTime: 40000,
+        }
        )
 
    console.log({isLoading, isFetching})
