@@ -2,16 +2,19 @@ import { useQuery } from "react-query";
 import axios from "axios";
 
 const fetchKpi = () => {
-    return axios.get('http://localhost:4040/getUsers')
+    return axios.get('http://localhost:4040/getUser')
 }
-
 
 const RQKpiPage = () => {
 
-   const { cargando, data } = useQuery('kpi', fetchKpi)
+   const { isLoading, data, isError, error } = useQuery('kpi', fetchKpi)
 
-    if (cargando) {
+    if (isLoading) {
         return <h2> Cargando...</h2>
+    }
+
+    if (isError) {
+        return <h2>{error.message}</h2>
     }
 
     return ( 
