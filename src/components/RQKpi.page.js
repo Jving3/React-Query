@@ -19,7 +19,11 @@ const RQKpiPage = () => {
        fetchKpi,
         {
             onSuccess: onSuccess, 
-            onError: onError
+            onError: onError,
+            select: (data) => {
+                const nombres = data.data.filter(item => item.lastname === 'Apostol')
+                return nombres
+            }
         }
        )
 
@@ -37,11 +41,16 @@ const RQKpiPage = () => {
         <>
             <div><h1>RQ KPI PAGE</h1></div>
             {/* <button onClick={refetch}>Actualizar</button> */}
-            {
+            {/* {
                 data?.data.map(item => {
                     return <div key={item.id}>{item.firstname}</div>
                 }) 
 
+            } */}
+            {
+                data.map( (nombres) => {
+                    return <div key={nombres.id}>{nombres.firstname}</div>
+                })
             }
         </>
      );
