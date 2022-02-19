@@ -12,6 +12,7 @@ const RQKpiPage = () => {
        fetchKpi,
         {
             refetchOnMount: true, //true, false (actualiza solo la primera vez), 'always'
+            refetchOnWindowFocus: 'always' // configuracion del comportamiento del enfoque de ventana
         }
        )
 
