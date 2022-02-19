@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 
 const fetchKpi = () => {
-    return axios.get('http://localhost:4040/getUser')
+    return axios.get('http://localhost:4040/getUsers')
 }
 
 const RQKpiPage = () => {
