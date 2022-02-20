@@ -1,4 +1,4 @@
-import useKpiData from "./hooks/useKpiData"
+import useKpiData from "../hooks/useKpiData"
 
 
 const RQKpiPage = () => {
