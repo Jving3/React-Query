@@ -97,7 +97,7 @@ a {
       min-height: 100vh;
   }
 
-  aside {
+  .barra-lateral {
       background-color: var(--blanco);
       flex: 0 0 300px;
   }
@@ -109,7 +109,7 @@ a {
 
 
 /* BARRA LATERAL */
-aside  {
+.barra-lateral  {
   padding: 3rem;
 }
 
@@ -375,4 +375,21 @@ aside  {
 .nave ul li {
   list-style-type: none;
   margin-right: 16px;
+}
+
+.encabezado{
+  margin-top: 1rem;
+}
+
+.produccion-total{
+  display: flex;
+  justify-content: center;
+  font-size: 2.4rem;
+}
+
+.produccion {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 10rem;
+  margin-top: 3rem;
 }
