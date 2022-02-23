@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import HomePage from './components/Home.page';
-import RQKpiPage from './components/RQKpi.page';
+import Home from './components/Home';
+import Produccion from './components/Produccion';
 import './index.css';
 
 const queryClient = new QueryClient()
@@ -18,13 +18,13 @@ function App() {
                       <Link to='/'>Home</Link>
                     </li>
                     <li>
-                      <Link to='/rq-kpi'>RQ Kpi Page</Link>
+                      <Link to='/produccion'>Producción</Link>
                     </li>
                   </ul>
                 </nav>
                 <Routes>
-                  <Route path='/' element={<HomePage/>}/>
-                  <Route path='/rq-kpi' element={<RQKpiPage/>}/>   
+                  <Route path='/' element={<Home/>}/>
+                  <Route path='/produccion' element={<Produccion/>}/>   
                 </Routes>
               </div>
             </BrowserRouter>

@@ -16,11 +16,7 @@ const useKpiData = (onSuccess, onError) => {
             refetchInterval: false
             // staleTime: 5000
             // enabled:false
-        },
-
-            // staleTime: 10000
-            // refetchInterval: false
-            
+        },  
         )
 
 }
