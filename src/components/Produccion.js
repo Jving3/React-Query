@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useKpiData from "../hooks/useKpiData"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'; //Legend, Cell
+import Tabla from "./Tabla";
 
 
 const Produccion = () => {
