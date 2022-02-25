@@ -13,7 +13,7 @@ const useKpiData = (onSuccess, onError) => {
         {
             onSuccess: onSuccess, //Tercer argumento: es un objeto donde podemos especificar opciones o configuraciones para modificar su comportamiento
             onError: onError,
-            // refetchInterval: false
+            // refetchInterval: 3000
             // staleTime: 5000
             // enabled:false
             

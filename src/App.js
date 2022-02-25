@@ -4,12 +4,15 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import Home from './components/Home';
 import Produccion from './components/Produccion';
 import './index.css';
+import ProduccionProvider from './context/ProduccionContext';
 
 const queryClient = new QueryClient()
 
 function App() {
   return (
+    
     <QueryClientProvider client={queryClient}>
+      <ProduccionProvider>
             <BrowserRouter>
               <div className='nave'>
                 <nav>
@@ -24,12 +27,14 @@ function App() {
                 </nav>
                 <Routes>
                   <Route path='/' element={<Home/>}/>
-                  <Route path='/produccion' element={<Produccion/>}/>   
+                  <Route path='/produccion' element={<Produccion/>} />   
                 </Routes>
               </div>
             </BrowserRouter>
+            </ProduccionProvider>
         <ReactQueryDevtools initialIsOpen={false} position='bottom-rigth '/>
     </QueryClientProvider>
+    
   )
 }
 
